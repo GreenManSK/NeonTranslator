@@ -46,7 +46,6 @@ class NeonTranslator implements Nette\Localization\ITranslator {
             if (isset($cacheSave))
                 $cache->save("_" . $langagueFile, $this->translation, array(Cache::FILES => $fileName));
         }
-        dump($this->translation);
     }
 
     /**
