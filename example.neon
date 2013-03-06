@@ -1,0 +1,10 @@
+#Example of translation written in .neon
+title: NeonTranslator
+version: 1.0
+test:
+	1: Test #For $count = 1
+	2: Tests #For 2 <= $count < 10
+	10: Lot of Tests #For $count >= 10
+Sentense test: Test vety
+Input %s test: Input %s here
+'Multitipe input %s, %s, %d': 'Here I input %s, %s, %d'
