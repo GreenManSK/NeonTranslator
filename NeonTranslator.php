@@ -18,13 +18,14 @@ class NeonTranslator implements Nette\Localization\ITranslator {
     private $translation;
 
     /**
-     * FileStorage for cache
-     * @var Nette\Caching\Storages\FileStorage
+     * Storage for cache
+     * @var Nette\Caching\IStorage
      */
     private $fileStroage;
 
-    public function __construct($langagueFile, Nette\Caching\Storages\FileStorage $fileStorage = NULL) {
+    public function __construct($langagueFile, Nette\Caching\IStorage $fileStorage = NULL) {
         $this->loadTranslation($langagueFile);
+        $this->fileStroage = $fileStorage;
     }
 
     /**
