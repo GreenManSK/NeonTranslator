@@ -25,7 +25,6 @@ class NeonTranslator implements Nette\Localization\ITranslator {
 
     public function __construct($langagueFile, Nette\Caching\Storages\FileStorage $fileStorage = NULL) {
         $this->loadTranslation($langagueFile);
-        $this->fileStroage = $fileStorage;
     }
 
     /**
