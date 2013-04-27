@@ -24,8 +24,8 @@ class NeonTranslator implements Nette\Localization\ITranslator {
     private $fileStroage;
 
     public function __construct($langagueFile, Nette\Caching\IStorage $fileStorage = NULL) {
-        $this->loadTranslation($langagueFile);
         $this->fileStroage = $fileStorage;
+        $this->loadTranslation($langagueFile);
     }
 
     /**
@@ -45,7 +45,7 @@ class NeonTranslator implements Nette\Localization\ITranslator {
             $neon = file_get_contents($fileName);
             $this->translation = Nette\Utils\Neon::decode($neon);
             if (isset($cacheSave))
-                $cache->save("_" . $langagueFile, $this->translation, array(Cache::FILES => $fileName));
+                $cache->save("_" . $langagueFile, $this->translation, array(Nette\Caching\Cache::FILES => $fileName));
         }
     }
 
